@@ -49,6 +49,15 @@ header {
     overflow: hidden;     /* impedisce scroll indesiderato */
 }
 
+#final-result {
+    color: #e67e22;          /* colore arancione caldo */
+    font-family: 'Comic Sans MS', 'Chalkboard SE', 'Segoe Print', cursive; /* font divertente e leggibile */
+    font-size: 1.5rem;       /* ingrandisce leggermente il testo */
+    text-align: center;      /* centra il testo */
+    margin: 20px 0;
+    text-shadow: 1px 1px 2px #aaa; /* piccolo effetto ombra */
+}
+
 /* Immagini ridimensionate */
 #images-container img {
     max-width: 90%;    /* non superano la larghezza dello schermo */
@@ -104,6 +113,7 @@ body, h1, h2, p {
         max-width: 90%;
     }
 }
+
 
 
 

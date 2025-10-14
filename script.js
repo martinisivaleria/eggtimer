@@ -39,9 +39,9 @@ function selectImage(questionKey, imageUrl) {
     let nextPage;
 
 	
-    if (currentPage.endsWith("index.html") || currentPage.endsWith("index")) nextPage = "page2.html";
-    else if (currentPage.endsWith("page2.html") || currentPage.endsWith("page2")) nextPage = "page3.html";
-    else if (currentPage.endsWith("page3.html") || currentPage.endsWith("page3")) nextPage = "result.html";
+    if (currentPage === "" || currentPage === "index.html") nextPage = "page2.html";
+    else if (currentPage === "page2.html") nextPage = "page3.html";
+    else if (currentPage === "page3.html") nextPage = "result.html";
 
 	console.log("Redirect verso:", nextPage);
 
@@ -64,5 +64,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 });
+
 
 

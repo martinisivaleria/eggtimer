@@ -7,7 +7,7 @@ body {
 
 header {
     text-align: center;
-    padding: 20px 0;
+    padding: 30px 10px;
 }
 
 .images-container {
@@ -19,7 +19,9 @@ header {
 }
 
 .images-container img {
-    max-width: 90%;
+    width: 100%;      /* occupa tutta la larghezza disponibile */
+    max-width: 350px; /* limita la dimensione su desktop */
+    height: auto;
     border-radius: 10px;
     cursor: pointer;
     transition: transform 0.2s;
@@ -52,4 +54,17 @@ header {
 @keyframes fall {
   0% { transform: translateY(0) rotate(0deg); }
   100% { transform: translateY(110vh) rotate(360deg); }
+
+}
+
+/* Media query per smartphone */
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5rem;
+        padding: 10px;
+    }
+
+    .images-container img {
+        max-width: 90%;
+    }
 }

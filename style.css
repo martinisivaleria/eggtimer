@@ -25,6 +25,7 @@ header {
     max-width: 360px; /* limita il contenitore */
     margin: 0 auto;   /* centra il contenitore */
     padding: 0 10px;  /* margini interni */
+    box-sizing: border-box;
 }
 
 /* Immagini ridimensionate */
@@ -81,3 +82,4 @@ header {
         max-width: 90%;
     }
 }
+

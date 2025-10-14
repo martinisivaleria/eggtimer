@@ -54,3 +54,30 @@ header {
   z-index: -1;
   background: linear-gradient(135deg, #fff8e1, #ffe0b2);
 }
+
+
+.kitchen-icon {
+  position: absolute;
+  top: -50px;
+  font-size: 2rem;
+  opacity: 0.8;
+  animation: fall linear infinite;
+}
+
+@keyframes fall {
+  0% { transform: translateY(0) rotate(0deg); }
+  100% { transform: translateY(110vh) rotate(360deg); }
+
+}
+
+/* Media query per smartphone */
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5rem;
+        padding: 10px;
+    }
+
+    .images-container img {
+        max-width: 90%;
+    }
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Risultato Finale</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="kitchen-bg"></div>
+    <header>
+        <h1>Risultato Finale</h1>
+    </header>
+
+    <main>
+        <div id="final-result">
+            Caricamento...
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", async () => {
+            // Recupera le scelte dell'utente salvate nelle pagine precedenti
+            const selections = JSON.parse(sessionStorage.getItem("userSelections"));
+			console.log("Selezioni recuperate da sessionStorage:", selections);
+            
+            if (!selections || !selections["cooking-types"] || !selections["temperature-options"] || !selections["animal-types"]) {
+                document.getElementById("final-result").textContent = "Nessuna scelta completa trovata.";
+                return;
+            }
+
+            try {
+                // Prepara l'oggetto come richiesto dal back-end
+                const payload = {
+                     cookingImageUrl: selections["cooking-types"],      // URL selezionata nella prima pagina
+                     temperatureImageUrl: selections["temperature-options"], // URL selezionata nella seconda pagina
+                     animalImageUrl: selections["animal-types"] 
+                };
+				console.log("Payload da inviare al back-end:", payload);
+
+                const res = await fetch('https://eggtimer-backend.onrender.com/api/time-results', {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(payload)
+                });
+				console.log("Risposta HTTP:", res);
+
+                if (!res.ok) throw new Error("Errore nella risposta dal server");
+
+                const totalTime = await res.json(); // totalTime è un numero
+				console.log("Valore restituito dal back-end:", totalTime);
+                document.getElementById("final-result").textContent = `Tempo totale: ${totalTime} minuti`;
+
+            } catch (err) {
+                console.error(err);
+                document.getElementById("final-result").textContent = "Errore nel calcolo del risultato.";
+            }
+        });
+    </script>
+</body>
+</html>
+

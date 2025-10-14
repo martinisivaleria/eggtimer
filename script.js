@@ -38,6 +38,7 @@ function selectImage(questionKey, imageUrl) {
     const currentPage = window.location.pathname.split("/").pop();
     let nextPage;
 
+	console.log("Redirect verso:", nextPage);
     if (currentPage === "index.html") nextPage = "page2.html";
     else if (currentPage === "page2.html") nextPage = "page3.html";
     else if (currentPage === "page3.html") nextPage = "result.html";
@@ -59,4 +60,5 @@ document.addEventListener("DOMContentLoaded", () => {
     icon.style.fontSize = `${1 + Math.random() * 2}rem`;
     kitchenBg.appendChild(icon);
   }
+
 });

@@ -9,6 +9,23 @@ body {
     min-height: 100vh;
 }
 
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* centra verticalmente */
+    align-items: center;     /* centra orizzontalmente */
+    height: 100vh;           /* occupa tutta l’altezza dello schermo */
+    overflow: hidden;        /* evita lo scroll verticale */
+    padding: 10px;
+}
+
+
 /* Header centrato */
 header {
     text-align: center;
@@ -21,24 +38,24 @@ header {
     flex-direction: column;
     gap: 15px;
     align-items: center;
-    width: 100%;
-    max-width: 360px; /* limita il contenitore */
-    margin: 0 auto;   /* centra il contenitore */
-    padding: 0 10px;  /* margini interni */
+    width: 90%;           /* occupa quasi tutta la larghezza dello schermo */
+    max-width: 360px;     /* limite massimo su schermi grandi */
+    height: 100%;         /* occupa tutta l’altezza del main */
+    justify-content: center; /* centra verticalmente le immagini */
+    margin: 0 auto;       /* centra orizzontalmente */
+    padding: 0 10px;      /* margini interni */
     box-sizing: border-box;
+    overflow: hidden;     /* impedisce scroll indesiderato */
 }
 
 /* Immagini ridimensionate */
 #images-container img {
-    width: 100%;        /* occupa tutto il contenitore */
-    max-width: 100px;   /* limite massimo */
-    height: auto;       /* mantiene proporzioni */
-    border-radius: 10px;
-    cursor: pointer;
-    object-fit: cover;
-    transition: transform 0.2s;
+    max-width: 90%;    /* non superano la larghezza dello schermo */
+    max-height: 30%;   /* occupano solo parte dello schermo in altezza */
+    height: auto;      /* mantiene le proporzioni */
+    display: block;
+    margin: 10px 0;
 }
-
 /* Hover */
 #images-container img:hover {
     transform: scale(1.05);
@@ -86,6 +103,7 @@ body, h1, h2, p {
         max-width: 90%;
     }
 }
+
 
 
 

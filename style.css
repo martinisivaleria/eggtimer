@@ -44,9 +44,8 @@ header {
     transform: scale(1.05);
 }
 
-html, body {
-    margin: 0;
-    padding: 0;
+body, h1, h2, p {
+    font-size: 16px; /* almeno 16px per evitare zoom automatico */
 }
 
 /* Sfondo */
@@ -87,5 +86,6 @@ html, body {
         max-width: 90%;
     }
 }
+
 
 

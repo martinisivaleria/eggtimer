@@ -51,7 +51,7 @@ header {
 
 #final-result {
     color: #e67e22;          /* colore arancione caldo */
-    font-family: 'Comic Sans MS', 'Chalkboard SE', 'Segoe Print', cursive; /* font divertente e leggibile */
+    font-family: 'Arial', sans-serif !important;
     font-size: clamp(1rem, 5vw, 2rem);       /* ingrandisce leggermente il testo */
     text-align: center;      /* centra il testo */
     margin: 20px 0;
@@ -113,6 +113,7 @@ body, h1, h2, p {
         max-width: 90%;
     }
 }
+
 
 
 

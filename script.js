@@ -43,8 +43,6 @@ function selectImage(questionKey, imageUrl) {
     else if (currentPage === "page2.html") nextPage = "page3.html";
     else if (currentPage === "page3.html") nextPage = "result.html";
 
-	console.log("Redirect verso:", nextPage);
-
     if (nextPage) window.location.href = nextPage;
 }
 
@@ -64,6 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 });
+
 
 
 

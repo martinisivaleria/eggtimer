@@ -49,15 +49,6 @@ header {
     overflow: hidden;     /* impedisce scroll indesiderato */
 }
 
-#final-result {
-    color: #e67e22;          /* colore arancione caldo */
-    font-family: 'Arial', sans-serif !important;
-    font-size: clamp(1rem, 5vw, 2rem);       /* ingrandisce leggermente il testo */
-    text-align: center;      /* centra il testo */
-    margin: 20px 0;
-    text-shadow: 1px 1px 2px #aaa; /* piccolo effetto ombra */
-}
-
 /* Immagini ridimensionate */
 #images-container img {
     max-width: 90%;    /* non superano la larghezza dello schermo */
@@ -111,6 +102,45 @@ body, h1, h2, p {
 
     .images-container img {
         max-width: 90%;
+    }
+}
+
+#final-result {
+    position: relative;
+    font-family: 'Arial', sans-serif;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #e67e22;
+    text-align: center;
+    z-index: 1;
+}
+
+#final-result::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 0, 0, 0.8) 10%, rgba(255, 255, 0, 0.8) 30%, rgba(0, 255, 255, 0.8) 50%, rgba(0, 0, 255, 0.8) 70%, rgba(255, 0, 255, 0.8) 90%);
+    border-radius: 50%;
+    animation: fireworks 1.5s ease-out infinite;
+    opacity: 0.6;
+}
+
+@keyframes fireworks {
+    0% {
+        transform: translateX(-50%) scale(0);
+        opacity: 0.6;
+    }
+    50% {
+        transform: translateX(-50%) scale(1);
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateX(-50%) scale(0);
+        opacity: 0.6;
     }
 }
 

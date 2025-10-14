@@ -51,7 +51,7 @@ header {
 /* Immagini ridimensionate */
 #images-container img {
     max-width: 90%;    /* non superano la larghezza dello schermo */
-    max-height: 10%;   /* occupano solo parte dello schermo in altezza */
+    max-height: 20%;   /* occupano solo parte dello schermo in altezza */
     height: auto;      /* mantiene le proporzioni */
     display: block;
     margin: 10px 0;
@@ -103,6 +103,7 @@ body, h1, h2, p {
         max-width: 90%;
     }
 }
+
 
 
 

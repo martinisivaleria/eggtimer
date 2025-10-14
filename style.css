@@ -20,8 +20,8 @@ header {
 
 .images-container img {
     width: 100%;      /* occupa tutta la larghezza disponibile */
-     max-width: 100px;  /* Limita la larghezza */
-    max-height: 100px; /* Limita l’altezza */
+    max-width: 10px;  /* Limita la larghezza */
+    max-height: 10px; /* Limita l’altezza */
     border-radius: 10px;
     cursor: pointer;
     transition: transform 0.2s;
@@ -68,4 +68,5 @@ header {
         max-width: 90%;
     }
 }
+
 

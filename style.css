@@ -15,11 +15,13 @@ header {
     flex-direction: column;
     gap: 15px;
     align-items: center;
-    margin-bottom: 20px;
+    width: 100%;
+    max-width: 320px; /* Limita il contenitore */
+    margin: 0 auto;
 }
 
 .images-container img {
-    width: 100%;      /* occupa tutta la larghezza disponibile */
+    width: 100 %;    /* occupa tutta la larghezza disponibile */
     max-width: 10px;  /* Limita la larghezza */
     max-height: 10px; /* Limita l’altezza */
     border-radius: 10px;
@@ -68,5 +70,6 @@ header {
         max-width: 90%;
     }
 }
+
 
 
